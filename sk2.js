@@ -7,15 +7,19 @@ const daftarMahasiswa = [
 
 function seleksiBeasiswa(dataMahasiswa) {
     let hasilSeleksi = [];
+    
     for (let i = 0; i < dataMahasiswa.length; i++) {
         let mhs = dataMahasiswa[i];
         mhs.status = (mhs.ipk >= 3.5 && mhs.pendapatanOrangTua <= 5000000) ? "Lolos" : "Tidak Lolos";
         hasilSeleksi.push(mhs);
     }
+    
     return hasilSeleksi;
 }
 
 let hasil = seleksiBeasiswa(daftarMahasiswa);
-hasil.forEach(mhs => {
-    console.log(`Nama: ${mhs.nama} | IPK: ${mhs.ipk} | Pendapatan Orang Tua: ${mhs.pendapatanOrangTua} |Status: ${mhs.status}`);
-});
+
+for (let i = 0; i < hasil.length; i++) {
+    const finalResult = `Nama: ${hasil[i].nama} | IPK: ${hasil[i].ipk} | Penghasilan Orang Tua: Rp ${hasil[i].pendapatanOrangTua} | Status: ${hasil[i].status}`;
+    console.log(finalResult);
+}

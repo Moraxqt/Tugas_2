@@ -15,7 +15,6 @@ function seleksiBeasiswa(dataMahasiswa) {
     return hasilSeleksi;
 }
 
-// Gimmick Tampilan Rapi Pakai Template Literals (Cuma 3-4 Baris Tambahan)
 let hasil = seleksiBeasiswa(daftarMahasiswa);
 hasil.forEach(mhs => {
     console.log(`Nama: ${mhs.nama} | IPK: ${mhs.ipk} | Pendapatan Orang Tua: ${mhs.pendapatanOrangTua} |Status: ${mhs.status}`);

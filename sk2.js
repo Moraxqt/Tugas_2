@@ -20,6 +20,6 @@ function seleksiBeasiswa(dataMahasiswa) {
 let hasil = seleksiBeasiswa(daftarMahasiswa);
 
 for (let i = 0; i < hasil.length; i++) {
-    const finalResult = `Nama: ${hasil[i].nama} | IPK: ${hasil[i].ipk} | Penghasilan Orang Tua: Rp ${hasil[i].pendapatanOrangTua} | Status: ${hasil[i].status}`;
+    const finalResult = `Nama: ${hasil[i].nama} | IPK: ${hasil[i].ipk} | Pendapatan Orang Tua: Rp ${hasil[i].pendapatanOrangTua} | Status: ${hasil[i].status}`;
     console.log(finalResult);
 }

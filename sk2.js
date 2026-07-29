@@ -7,38 +7,16 @@ const daftarMahasiswa = [
 
 function seleksiBeasiswa(dataMahasiswa) {
     let hasilSeleksi = [];
-
     for (let i = 0; i < dataMahasiswa.length; i++) {
         let mhs = dataMahasiswa[i];
-        let status = "";
-
-        if (mhs.ipk >= 3.5 && mhs.pendapatanOrangTua <= 5000000) {
-            status = "Lolos";
-        } else {
-            status = "Tidak Lolos";
-        }
-
-        hasilSeleksi.push({
-            nama: mhs.nama,
-            ipk: mhs.ipk,
-            pendapatanOrangTua: mhs.pendapatanOrangTua,
-            status: status
-        });
+        mhs.status = (mhs.ipk >= 3.5 && mhs.pendapatanOrangTua <= 5000000) ? "Lolos" : "Tidak Lolos";
+        hasilSeleksi.push(mhs);
     }
-
     return hasilSeleksi;
 }
 
+// Gimmick Tampilan Rapi Pakai Template Literals (Cuma 3-4 Baris Tambahan)
 let hasil = seleksiBeasiswa(daftarMahasiswa);
-
-for (let i = 0; i < hasil.length; i++) {
-    const finalResult = `
-Nama             : ${hasil[i].nama}
-IPK              : ${hasil[i].ipk}
-Pendapatan Ortua : Rp ${hasil[i].pendapatanOrangTua}
-Status           : ${hasil[i].status}
-
------------------------------------`;
-
-    console.log(finalResult);
-}
+hasil.forEach(mhs => {
+    console.log(`Nama: ${mhs.nama} | IPK: ${mhs.ipk} | Pendapatan Orang Tua: ${mhs.pendapatanOrangTua} |Status: ${mhs.status}`);
+});

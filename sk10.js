@@ -1,6 +1,6 @@
 const daftarEmail = [
     "justin.ohio@gmail.com",
-    "roma.irama.com", 
+    "zeuspastigacor.com", 
     "lappak_32@yahoo",
     "lionel_sindhubaren@outlook.com"
 ];
